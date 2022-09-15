@@ -1,0 +1,19 @@
+version: "3"
+services:
+  webserver:
+    container_name: webserver
+    build: .
+    ports:
+      - 8000:8000
+    depends_on:
+      - mongo
+    tty: true
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - mongodb:/data/db
+    ports:
+      - 27017:27017
+volumes:
+  mongodb:

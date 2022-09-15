@@ -1,6 +1,6 @@
 const postsRouter = require("express").Router();
 const Post = require("../models/postModel");
-const Comment = require("../models/CommentModel");
+const Comment = require("../models/commentModel");
 const { getPost, getCommentsByPost } = require("../utils/api/jsonPlaceholder");
 
 postsRouter.get("/:postId", async (req, res, next) => {
